@@ -1,0 +1,52 @@
+{
+  "Comment": "Use Rekognition to process images saved to S3 bucket and send updates if an unkown person is detected or an error occurs anywhere in the function.",
+  "StartAt": "process-image",
+  "States": {
+    "send-error-email": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-2:[arn_here]:function:send-error-email",
+      "End": true
+    },
+    "process-image": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-2:[arn_here]:function:process-image",
+      "Catch":[{
+        "ErrorEquals": ["States.ALL"],
+        "Next": "send-error-email"
+      }],
+      "Next": "trigger-alarm-message"
+    },
+    "trigger-alarm-message": {
+      "Type": "Choice",
+      "Choices": [{
+          "Variable": "$.alarm",
+          "StringEquals": "true",
+          "Next": "send-alarm-email"
+          },{
+          "Variable": "$.alarm",
+           "StringEquals": "false",
+           "Next": "move-image-to-archive"
+         }
+       ],
+      "Default": "move-image-to-archive"
+    },
+    "send-alarm-email": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-2:[arn_here]:function:send-alarm-email",
+      "Catch":[{
+        "ErrorEquals": ["States.ALL"],
+        "Next": "send-error-email"
+      }],
+      "Next": "move-image-to-archive"
+    },
+    "move-image-to-archive": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-2:[arn_here]:function:move-image-to-archive",
+      "Catch":[{
+        "ErrorEquals": ["States.ALL"],
+        "Next": "send-error-email"
+      }],
+      "End": true
+    }
+  }
+}
