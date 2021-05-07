@@ -17,6 +17,7 @@ Our code uses us-east-2 region. Feel free to change the region in the code to wh
 Bucket will needs two folders : "/upload" and "/archives".
 Directly under the "/archives" folder, create the "/alerts" and "/rejected" sub-folder.
 In the "Permissions->Bucket Policy" tab for your S3 Bucket, set up the following Bucket Policy:
+###
 {
     "Version": "2012-10-17",
     "Statement": [
