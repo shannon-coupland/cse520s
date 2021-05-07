@@ -16,7 +16,7 @@ var path = require('path');
 var fs = require('fs');
 
 // Load configration file
-AWS.config.loadFromPath('/usr/local/bin/scripts/s3-upload/config.json');
+AWS.config.loadFromPath('config.json');
 
 // Create S3 service object
 s3 = new AWS.S3({apiVersion: '2006-03-01'});
