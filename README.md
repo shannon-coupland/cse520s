@@ -37,3 +37,6 @@ In the "Permissions->Bucket Policy" tab for your S3 Bucket, set up the following
         }
     ]
 }
+
+## AWS Website
+On a seperate AWS account we ran an Ubuntu EC2 instance that hosted the website which displayed camera live stream and images of intruders.
