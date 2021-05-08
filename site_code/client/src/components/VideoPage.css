@@ -1,0 +1,39 @@
+.VideoDiv {
+  width: 100%;
+  display: flex;
+}
+
+.Page {
+  width: 100%;
+}
+
+.Info {
+  width: 46%;
+  height: 500px;
+  margin: right;
+  margin-left: 70px;
+  display: flex;
+  line-height: 80px;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.tabtitle {
+  margin-top: 0px;
+}
+
+.iframe-container {
+  overflow: hidden;
+  /* 16:9 aspect ratio */
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.iframe-container iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}

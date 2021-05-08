@@ -1,0 +1,30 @@
+.List {
+  width: 100%;
+  display: block;
+  line-height: 100px;
+}
+
+.Info {
+  width: 60%;
+  height: 400px;
+  margin: right;
+  color: white;
+  display: flex;
+  line-height: 80px;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.tabtitle {
+  margin-top: 0px;
+}
+
+img {
+  width: 50%;
+  height: 450px;
+  line-height: 80px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+}
