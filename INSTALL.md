@@ -1,5 +1,5 @@
 
-Individual settings for the lambda functions are located in their respective folders. Each lambda function will require a new permissions policy for it to ensure the functions are accessing the correct functions. 
+Individual settings for the lambda functions are located in their respective folders. Each lambda function will require a new permissions policy for it to ensure the functions are accessing the correct functions. Once set up, you can copy and paste the lambda function code in.
 
 ## AWS Website
 Start an Ubuntu EC2 Instance.
