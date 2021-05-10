@@ -1,7 +1,7 @@
 
 Individual settings for the lambda functions are located in their respective folders. Each lambda function will require a new permissions policy for it to ensure the functions are accessing the correct functions. 
 
-##AWS Website
+## AWS Website
 Start an Ubuntu EC2 Instance.
 Set up instance to take a client and server and run client via nginx.
 Download files from the site images fodler and run "npm install" from server and client fodlers to get the required node modules.
